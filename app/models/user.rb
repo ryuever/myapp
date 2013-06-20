@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  attr_accessible :email, :name, :password, :password_confirmation
+  attr_accessible :email, :name, :password, :password_confirmation, :attachments_attributes
   
   has_secure_password
   before_save { |user| user.email = email.downcase }
@@ -11,6 +11,9 @@ class User < ActiveRecord::Base
   uniqueness: { case_sensitive: false }
   validates :password, presence: true, length: { minimum: 6 }
   validates :password_confirmation, presence: true
+  
+  has_many :attachments, :as => :attachable
+  accepts_nested_attributes_for :attachments
 
   private
   

@@ -1,23 +1,30 @@
 <% provide(:title, 'Sign up') %>
 <h1>Sign up</h1>
-
+  <% @user.attachments.build %>
 <div class="row">
   <div class="span6 offset3">
-    <%= form_for(@user) do |f| %>
+    <%= form_for(@user) do |user| %>
       <%= render 'shared/error_messages' %>
-      <%= f.label :name %>
-      <%= f.text_field :name %>
+      <%= user.label :name %>
+      <%= user.text_field :name %>
 
-      <%= f.label :email %>
-      <%= f.text_field :email %>
+      <%= user.label :email %>
+      <%= user.text_field :email %>
 
-      <%= f.label :password %>
-      <%= f.password_field :password %>
+      <%= user.label :password %>
+      <%= user.password_field :password %>
 
-      <%= f.label :password_confirmation, "Confirmation" %>
-      <%= f.password_field :password_confirmation %>
+      <%= user.label :password_confirmation, "Confirmation" %>
+      <%= user.password_field :password_confirmation %>
 
-      <%= f.submit "Create my account", class: "btn btn-large btn-primary" %>
+      <%= user.fields_for :attachments, :html => { :multipart => true } do |attachment| %>
+        <%= attachment.label :catagory, "Catagory" %>
+        <%= attachment.text_field :catagory %>
+        
+        <%= attachment.label :file, "upload file" %>
+        <%= attachment.file_field :avatar %>
+      <% end %>
+      <%= user.submit "Create my account", class: "btn btn-large btn-primary" %>
     <% end %>
   </div>
 </div>
