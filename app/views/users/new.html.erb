@@ -17,12 +17,6 @@
       <%= user.label :password_confirmation, "Confirmation" %>
       <%= user.password_field :password_confirmation %>
 
-      <%= user.fields_for :attachments, :html => { :multipart => true } do |attachment| %>
-        <%= attachment.label :catagory, "Catagory" %>
-        <%= attachment.text_field :catagory %>
-        
-        <%= attachment.file_field :avatar %>
-      <% end %>
       <%= user.submit "Create my account", class: "btn btn-large btn-primary" %>
     <% end %>
   </div>

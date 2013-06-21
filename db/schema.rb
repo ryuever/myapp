@@ -14,7 +14,7 @@
 ActiveRecord::Schema.define(:version => 20130620153351) do
 
   create_table "attachments", :force => true do |t|
-    t.string   "catagory"
+    t.string   "category"
     t.integer  "attachable_id"
     t.string   "attachable_type"
     t.datetime "created_at",          :null => false
