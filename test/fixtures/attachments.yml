@@ -2,10 +2,8 @@
 
 one:
   catagory: MyString
-  file: MyString
   attachable: 
 
 two:
   catagory: MyString
-  file: MyString
   attachable: 

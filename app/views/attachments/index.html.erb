@@ -1,0 +1,15 @@
+<% if !@attachments.nil? %>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>File Name</th>
+        <th>Size</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render @attachments %> 
+    </tbody>
+  </table>
+<% end %>
+<%= render 'attachments/form' %>

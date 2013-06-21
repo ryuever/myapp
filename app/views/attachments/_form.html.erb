@@ -1,0 +1,10 @@
+<%= form_for([@user,Attachment.new], :html => { :multipart => true }) do |attachment| %>
+  <%= attachment.label :catagory, "Catagory" %>
+  <%= attachment.text_field :catagory %>
+
+
+  <%= attachment.file_field :avatar %>
+  <div class="actions">
+    <%= attachment.submit %>
+  </div>
+<% end %>

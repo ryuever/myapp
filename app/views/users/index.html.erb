@@ -1,9 +1,5 @@
 <%= provide(:title, "All users") %>
 <h1>All users</h1>
-<button class="btn" style="float: right;" >
-  <%= link_to "Add user", new_user_path %>
-</button>
-
 <%= will_paginate %>
 <ul class="users">
   <%= render @users %>

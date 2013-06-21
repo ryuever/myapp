@@ -1,0 +1,8 @@
+<tr>
+  <td><%= attachment.avatar_file_name %></td>
+  <td><%= attachment.avatar_file_size %></td>
+  <td>
+	<%= link_to 'Delete',[@user,attachment],:method => :delete, :confirm => "Are You Sure?" %> | 
+    <%= link_to 'Download', attachments_download_path(attachment) %>      
+  </td>
+</tr>

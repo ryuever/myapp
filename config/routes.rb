@@ -1,7 +1,10 @@
 App::Application.routes.draw do
   get "home/index"
 
-  resources :users
+  resources :users do
+    resources :attachments
+  end
+  
   resources :sessions, only: [:new, :create, :destroy]
 
   match 'signup',   to: 'users#new',            via: 'get'
@@ -12,7 +15,14 @@ App::Application.routes.draw do
   match '/about',   to: 'static_pages#about',   via: 'get'
   match '/contact', to: 'static_pages#contact', via: 'get'  
 
-  # The priority is based upon order of creation:
+  # match 'attachments/:id', to: 'attachment#show',      via: 'get',    :as => :attachment
+  # match 'attachments/:id', to: 'attachment#destroy',   via: 'delete', :as => :attachments_delete
+  match 'attachments/:id/download', to: 'attachments#download', :as => :attachments_download
+#  match '/users/:user_id/attachments/:id', to: 'attachments#destroy', :as => :attachments_delete, via: 'delete'
+  #  match 'attachments/',    to: 'attachment#index',     via: 'get',    :as => :attachments
+ 
+
+ # The priority is based upon order of creation:
   # first created -> highest priority.
 
   # Sample of regular route:
