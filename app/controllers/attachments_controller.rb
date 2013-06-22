@@ -8,7 +8,6 @@ class AttachmentsController < ApplicationController
   end
   
   def create
-    debugger
     @user = User.find(params[:user_id])
     @attachment = @user.attachments.create(params[:attachment])
     redirect_to user_attachments_path(@user)
@@ -24,7 +23,6 @@ class AttachmentsController < ApplicationController
   end
   
   def destroy
-    debugger
     attachment = Attachment.find(params[:id])
     attachment.destroy
     flash[:notice] = "Sucessfully deleted your file"
