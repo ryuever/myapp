@@ -4,11 +4,12 @@
   <% if @attachments ==[] %>
     <% flash.now[notice] = "The book list is empty" %>
   <% else %>
-    <table class="table table-striped">
+    <table class="table table-striped fixed">
       <thead>
         <tr>
           <th>File Name</th>
           <th>Size</th>
+          <th>Owner</th>
           <th>Category</th>
           <th>Actions</th>
         </tr>

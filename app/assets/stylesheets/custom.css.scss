@@ -244,3 +244,15 @@ aside {
     margin-bottom: 5px;
   }
 }
+
+/* fixed table */
+
+table.fixed {
+/* border: 1px solid black;*/
+/* table-layout: fixed;*/
+ width: 100%;
+}
+
+table.fixed td:first-child {
+    width: 35%;
+}

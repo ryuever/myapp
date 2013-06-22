@@ -12,7 +12,6 @@ class AttachmentsController < ApplicationController
     # @attachments = Attachment.all
     @user = User.find(params[:user_id])
     @attachments = @user.attachments
-#    debugger
   end
   
   def create
