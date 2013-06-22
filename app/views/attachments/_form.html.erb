@@ -1,7 +1,9 @@
 <%= form_for([@user,Attachment.new], :html => { :multipart => true }) do |attachment| %>
+  <%= attachment.label :category %>
   <%= select 'attachment','category',[['java','java'],['js','js'],['python','python'],['ruby','ruby']],
-      {},{:class => 'input-small', :style => "height:40px"} %>
+      {},{:class => 'input-small', :style => "height:39px"} %>
 
+  <%= attachment.label "File to upload" %>
   <%= attachment.file_field :avatar %><br />
   
   <%= attachment.submit "upload file", class: "btn btn-small btn-primary"%>

@@ -1,5 +1,13 @@
 class AttachmentsController < ApplicationController
 
+  def new
+    @user = User.find(params[:user_id])
+  end
+  
+  def all
+    @users = User.all
+  end
+
   def index
     # @attachments = Attachment.all
     @user = User.find(params[:user_id])

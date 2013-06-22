@@ -1,0 +1,23 @@
+<% @users.each do |user| %>
+  <% @user = user %>
+  <% @attachments = Attachment.find_all_by_attachable_id(user.id) %>
+  <% if @attachments ==[] %>
+    <% flash.now[notice] = "The book list is empty" %>
+  <% else %>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>File Name</th>
+          <th>Size</th>
+          <th>Category</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render @attachments %> 
+      </tbody>
+    </table>
+  <% end %>
+<% end %>
+
+

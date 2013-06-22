@@ -18,7 +18,8 @@ App::Application.routes.draw do
   # match 'attachments/:id', to: 'attachment#show',      via: 'get',    :as => :attachment
   # match 'attachments/:id', to: 'attachment#destroy',   via: 'delete', :as => :attachments_delete
   match 'attachments/:id/download', to: 'attachments#download', :as => :attachments_download
-#  match '/users/:user_id/attachments/:id', to: 'attachments#destroy', :as => :attachments_delete, via: 'delete'
+  match 'users/attachments/all',    to: 'attachments#all',     :as => :users_attachments_all,       via: 'get'
+  #  match '/users/:user_id/attachments/:id', to: 'attachments#destroy', :as => :attachments_delete, via: 'delete'
   #  match 'attachments/',    to: 'attachment#index',     via: 'get',    :as => :attachments
  
 
