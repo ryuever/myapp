@@ -262,6 +262,9 @@ table.fixed td:first-child {
     border-top: 1px solid #DDDDDD;
 }
 
+.table-middle{
+    margin: auto;
+}
 
 a.current-link {
     background: #22f000;
@@ -274,3 +277,15 @@ a.current-link {
 .span-770 {
     width: 770px;
 } 
+
+
+.input-select{
+    height: 26px; 
+    padding: 2px;
+}
+
+.label-form {
+    border-radius: 3px 3px 3px 3px;
+    margin-bottom: 15px;
+}
+
