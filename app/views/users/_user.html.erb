@@ -1,8 +1,8 @@
 <li>
   <%= gravatar_for user, size: 52 %>
   <div class="btn-group">
-    <button class="btn"><%= link_to user.name, user %></button>
-    <button class="btn"><%= link_to "books", user_attachments_path(user) %></button>
+    <%= link_to user.name, user,{:class => 'btn'} %>
+    <%= link_to "books", user_attachments_path(user),{:class => 'btn'} %>
   </div>
   <% if current_user.admin? && !current_user?(user) %>
       | <%= link_to "delete", user, method: :delete, data: {confirm: "You sure?"} %>

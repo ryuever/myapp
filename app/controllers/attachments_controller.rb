@@ -5,8 +5,10 @@ class AttachmentsController < ApplicationController
   end
   
   def all
-    @users = User.all
+   # @users = User.all
+    @users = User.paginate(page: params[:page],:per_page => 10)
     @user  = User.find(params[:user_id])
+    
 #    @user  = User.find(params[:id]) 
   end
 
