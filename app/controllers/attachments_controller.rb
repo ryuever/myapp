@@ -6,6 +6,8 @@ class AttachmentsController < ApplicationController
   
   def all
     @users = User.all
+    @user  = User.find(params[:user_id])
+#    @user  = User.find(params[:id]) 
   end
 
   def index
