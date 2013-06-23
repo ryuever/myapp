@@ -256,3 +256,13 @@ table.fixed {
 table.fixed td:first-child {
     width: 35%;
 }
+
+.table tr {
+    border-bottom: 1px solid #DDDDDD;
+    border-top: 1px solid #DDDDDD;
+}
+
+
+a.current-link {
+    color: #FF0000;
+}

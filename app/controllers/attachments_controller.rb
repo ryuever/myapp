@@ -8,7 +8,7 @@ class AttachmentsController < ApplicationController
    # @users = User.all
     @users = User.paginate(page: params[:page],:per_page => 10)
     @user  = User.find(params[:user_id])
-    
+    @attachments = Attachment.find_all_by_attachable_id(@user.id)
 #    @user  = User.find(params[:id]) 
   end
 

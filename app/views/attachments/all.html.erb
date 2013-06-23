@@ -6,7 +6,12 @@
         <% @users.each do |user| %>
           <li>
             <%= gravatar_for user, size: 52 %>
-            <%= link_to user.name, users_attachments_all_path(user) %>
+            <% if user == @user %>
+              <%= link_to user.name, users_attachments_all_path(user), {:class => "current-link"}%>
+            <% else %>
+              <%= link_to user.name, users_attachments_all_path(user) %>              
+            <% end %>
+
           </li>        
         <% end %>
       </ul>
@@ -14,10 +19,9 @@
     </section>
   </aside>
   <div class="span8">
-      <% @attachments = Attachment.find_all_by_attachable_id(@user.id) %>
       <% if @attachments ==[] %>
         <% flash.now[notice] = "The book list is empty" %>
-      <% else %>
+      <% end %>
         <table class="table table-striped fixed">
           <thead>
             <tr>
@@ -32,6 +36,5 @@
             <%= render @attachments %> 
           </tbody>
         </table>
-      <% end %>
   </div>
 </div>

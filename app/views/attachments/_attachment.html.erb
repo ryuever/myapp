@@ -1,14 +1,16 @@
 <tr>
   <td><%= attachment.avatar_file_name %></td>
   <% if attachment.avatar_file_size < 1048576 %>
-    <td><%= (attachment.avatar_file_size / 1024).to_s() + 'K' %></td>
-  <% else %>
+  <td><%= (attachment.avatar_file_size / 1024).to_s() + 'K' %></td>
+<% else %>
   <td><%= (attachment.avatar_file_size / 1048576).to_s() + 'M' %></td>
-  <% end %>
+<% end %>
   <td><%= @user.name %></td>
   <td><%= attachment.category %></td>
   <td>
-	<%= link_to 'Delete',[@user,attachment],:method => :delete, :confirm => "Are You Sure?" %> | 
-    <%= link_to 'Download', attachments_download_path(attachment) %>      
+    <% if @user == current_user %>
+      <%= link_to 'Delete',[@user,attachment],:method => :delete, :confirm => "Are You Sure?" %> |      
+    <% end %>
+    <%= link_to 'Download', attachments_download_path(attachment) %>
   </td>
 </tr>
