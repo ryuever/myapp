@@ -1,10 +1,18 @@
 <%= form_for([@user,Attachment.new], :html => { :multipart => true }) do |attachment| %>
-  <%= attachment.label :category %>
-  <%= select 'attachment','category',[['java','java'],['js','js'],['python','python'],['ruby','ruby']],
-      {},{:class => 'input-small', :style => "height:39px"} %>
 
-  <%= attachment.label "File to upload" %>
-  <%= attachment.file_field :avatar %><br />
+<table class="table-middle">
+  <tr>
+    <td><b class="label label-form">Category </b></td>
+    <td><%= select 'attachment','category',[['java','java'],['js','js'],['python','python'],['ruby','ruby']],
+      {},{:class => 'input-small input-select', :style => "height:26px"} %></td>
+  </tr>
+  <tr>
+    <td><b class="label label-form">File to upload</b></td>
+    <td><%= attachment.file_field :avatar %></td>
+  </tr>
+</table>
   
-  <%= attachment.submit "upload file", class: "btn btn-small btn-primary"%>
+  <%= attachment.submit "upload file", class: "btn"%>
+  <%= link_to('Book list', user_attachments_path(@user),{:class => 'btn'}) %>
+  
 <% end %>

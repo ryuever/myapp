@@ -5,9 +5,8 @@
 <% else %>
   <td><%= (attachment.avatar_file_size / 1048576).to_s() + 'M' %></td>
 <% end %>
-  <td><%= @user.name %></td>
   <td><%= attachment.category %></td>
-  <td><%= attachment.created_at.strftime("%D ") %></td>
+  <td><%= attachment.created_at.strftime("%D %H:%M") %></td>
   <td>
     <% if @user == current_user %>
       <%= link_to 'Delete',[@user,attachment],:method => :delete, :confirm => "Are You Sure?" %> |      
