@@ -1,11 +1,11 @@
 <div class="row">
-  <aside class="span4">
+  <aside class="span-150">
     <section>
-      <%= will_paginate @users%>
+      <%= will_paginate @users, :outer_window => 1, :inner_window => 1 %>
       <ul class='users'>
         <% @users.each do |user| %>
           <li>
-            <%= gravatar_for user, size: 52 %>
+            <%= gravatar_for user, size: 22 %>
             <% if user == @user %>
               <%= link_to user.name, users_attachments_all_path(user), {:class => "current-link"}%>
             <% else %>
@@ -18,7 +18,7 @@
         <%= will_paginate @users%>
     </section>
   </aside>
-  <div class="span8">
+  <div class="span-770">
       <% if @attachments ==[] %>
         <% flash.now[notice] = "The book list is empty" %>
       <% end %>
@@ -29,6 +29,7 @@
               <th>Size</th>
               <th>Owner</th>
               <th>Category</th>
+              <th>Update Time</th>
               <th>Actions</th>
             </tr>
           </thead>

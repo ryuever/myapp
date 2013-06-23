@@ -7,6 +7,7 @@
 <% end %>
   <td><%= @user.name %></td>
   <td><%= attachment.category %></td>
+  <td><%= attachment.created_at.strftime("%D ") %></td>
   <td>
     <% if @user == current_user %>
       <%= link_to 'Delete',[@user,attachment],:method => :delete, :confirm => "Are You Sure?" %> |      
