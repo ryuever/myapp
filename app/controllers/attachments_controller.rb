@@ -42,6 +42,11 @@ class AttachmentsController < ApplicationController
     #  redirect_to user_attachments_path
     redirect_to :back
   end
+
+  def search 
+    @user = User.new
+  end
+  
   def result
     debugger
     @attachments = Attachment.find_all_by_category(params[:category])

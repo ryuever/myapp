@@ -3,7 +3,9 @@
     <tbody id = "wrapper">
       <tr>
         <td><b class="label label-form">Category </b></td>
-        <td><%= select 'attachment','category',[['java','java'],['js','js'],['python','python'],['ruby','ruby']],
+        <td><%= select 'attachment','category',[['java','java'],['js','js'],['python','python'],['ruby','ruby'],
+                                               ['lisp','lisp'],['html','html'],['css','css'],['nodejs','nodejs'],
+                                                ['R','R'],['data mining','data mining']],
                 {},{:class => 'input-small input-select', :style => "height:26px"} %></td>
       </tr>
       <tr>
