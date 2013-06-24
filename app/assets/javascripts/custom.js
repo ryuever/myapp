@@ -17,4 +17,8 @@ $(document).ready(function(){
         }
         return false;
     });
+    
+    $(".reload").click(function(){
+        location.reload();
+    });
 });

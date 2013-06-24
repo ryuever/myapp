@@ -1,6 +1,6 @@
 class Attachment < ActiveRecord::Base
   belongs_to :attachable, :polymorphic => true
-  attr_accessible :category, :avatar
+  attr_accessible :category, :avatar, :download_time
 
   # validates_attachment_presence :avatar,
   # :content_type => /^image\/(jpg|jpeg|pjpeg|png|x-png|gif)$/, 

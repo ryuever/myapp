@@ -7,10 +7,11 @@
 <% end %>
   <td><%= attachment.category %></td>
   <td><%= attachment.created_at.strftime("%D %H:%M") %></td>
+  <td><%= attachment.download_time %></td>
   <td>
     <% if @user == current_user %>
-      <%= link_to 'Delete',[@user,attachment],:method => :delete, :confirm => "Are You Sure?" %> |      
+      <%= link_to 'Delete',[@user,attachment],:method => :delete, :confirm => "Are You Sure?"%> |      
     <% end %>
-    <%= link_to 'Download', attachments_download_path(attachment) %>
+    <%= link_to 'Download', attachments_download_path(attachment), :class => "reload" %>
   </td>
 </tr>

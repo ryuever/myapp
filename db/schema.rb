@@ -11,18 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130620153351) do
+ActiveRecord::Schema.define(:version => 20130624075142) do
 
   create_table "attachments", :force => true do |t|
     t.string   "category"
     t.integer  "attachable_id"
     t.string   "attachable_type"
-    t.datetime "created_at",          :null => false
-    t.datetime "updated_at",          :null => false
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.integer  "download_time",       :default => 0
   end
 
   add_index "attachments", ["attachable_id"], :name => "index_attachments_on_attachable_id"
