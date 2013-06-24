@@ -39,5 +39,14 @@ class AttachmentsController < ApplicationController
     flash[:notice] = "Sucessfully deleted your file"
     redirect_to user_attachments_path
   end
+  
+  def search_result
+    debugger
+    @attachments = Attachment.find_all_by_category(params[:category])
+  end
+  
+  def search
+    @user = User.new
+  end
 end
 

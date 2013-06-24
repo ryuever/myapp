@@ -39,6 +39,7 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
+    debugger
     @user = User.new(params[:user])
 
     if @user.save
