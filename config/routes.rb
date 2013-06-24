@@ -20,8 +20,9 @@ App::Application.routes.draw do
   match 'attachments/:id/download', to: 'attachments#download', :as => :attachments_download
 #  match 'alluser/:id/attachments/all',    to: 'attachments#all',  :as => :users_attachments_all,       via: 'get'
   match 'users/:user_id/list/attachments/all', to: 'attachments#all', :as => :users_attachments_all, via: 'get'
+  match 'user/attachment/result', to: 'attachments#result'
   match 'users/attachments/search', to: 'attachments#search',   :as => :attachments_search, via: 'get'
-  match 'users/attachments/search/result', to: 'attachments#search_result',   :as => :attachments_search, via: 'post'
+
   #  match '/users/:user_id/attachments/:id', to: 'attachments#destroy', :as => :attachments_delete, via: 'delete'
   #  match 'attachments/',    to: 'attachment#index',     via: 'get',    :as => :attachments
  
